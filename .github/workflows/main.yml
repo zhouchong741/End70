@@ -30,3 +30,9 @@ jobs:
 
       - name: 执行爬虫脚本
         run: python scrape_endclothing.py
+        
+      - name: 上传结果文件
+        uses: actions/upload-artifact@v4
+        with:
+          name: scrape-results
+          path: output.json  # 替换为你的输出文件路径
