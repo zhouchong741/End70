@@ -5,6 +5,13 @@ import json
 import time
 import math
 import os
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 
 BASE_URL = "https://www.endclothing.com/cn/sale"
 OUTPUT_FILE = "endclothing_70off.json"
@@ -35,16 +42,38 @@ def save_data(products_dict):
     with open(DATA_JS_FILE, 'w', encoding='utf-8') as f:
         f.write(f"window.products = {json_str};")
 
-def get_page_soup(page_num):
+def get_page_soup(page_num, driver=None):
+    """使用Selenium获取渲染后的页面"""
     url = f"{BASE_URL}?page={page_num}"
-    print(f"Fetching {url}...")
+    print(f"Fetching {url} with Selenium...")
+    
+    close_driver = False
+    if driver is None:
+        close_driver = True
+        options = Options()
+        options.add_argument('--headless')
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_argument('--disable-gpu')
+        options.add_argument(f'user-agent={HEADERS["User-Agent"]}')
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    
     try:
-        response = requests.get(url, headers=HEADERS, timeout=15)
-        response.raise_for_status()
-        return BeautifulSoup(response.text, 'html.parser')
+        driver.get(url)
+        # 等待产品容器加载
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, "img"))
+        )
+        time.sleep(2)  # 额外等待确保图片加载
+        
+        html = driver.page_source
+        return BeautifulSoup(html, 'html.parser')
     except Exception as e:
         print(f"Error fetching page {page_num}: {e}")
         return None
+    finally:
+        if close_driver and driver:
+            driver.quit()
 
 def get_total_pages(soup):
     try:
@@ -100,15 +129,25 @@ def extract_products(soup):
             full_url = f"https://www.endclothing.com{href}" if href.startswith('/') else href
             content = link.get_text(strip=True)
             
-            # Extract Image
+            # Extract Image - Improved logic
             img_tag = link.find('img')
             img_url = ""
             if img_tag:
+                # 优先使用 src 属性
                 if img_tag.get('src'):
                     img_url = img_tag.get('src')
+                # 如果没有 src，尝试从 srcset 提取
                 elif img_tag.get('srcset'):
-                    # srcset format: "url1 1w, url2 2w", take first one
-                    img_url = img_tag.get('srcset').split(' ')[0]
+                    # srcset 格式: "url1 64w, url2 480w, url3 1600w"
+                    # 提取第一个URL（移除宽度描述符）
+                    srcset_parts = img_tag.get('srcset').split(',')
+                    if srcset_parts:
+                        # 取第一个srcset项，移除宽度描述符
+                        first_src = srcset_parts[0].strip().split(' ')[0]
+                        img_url = first_src
+                # 如果仍然没有，尝试data-src（懒加载）
+                elif img_tag.get('data-src'):
+                    img_url = img_tag.get('data-src')
             
             match = re.search(r'(.*)(CN¥[\d,]+)(CN¥[\d,]+)(70% off)$', content)
             if match:
@@ -147,28 +186,38 @@ def main():
     
     current_run_urls = set()
     
-    soup = get_page_soup(1)
-    if not soup:
-        print("Failed to load first page. Exiting.")
-        return
-
-    total_pages = get_total_pages(soup)
-    if not total_pages:
-        print("Could not determine total pages automatically. Defaulting to 100.")
-        total_pages = 100
-
-    print("Processing page 1...")
-    products = extract_products(soup)
-    print(f"Found {len(products)} items on page 1.")
+    # 创建共享的Selenium driver
+    print("Initializing Selenium WebDriver...")
+    options = Options()
+    options.add_argument('--headless')
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-gpu')
+    options.add_argument(f'user-agent={HEADERS["User-Agent"]}')
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
-    for p in products:
-        url = p['url']
-        current_run_urls.add(url)
-        all_products_dict[url] = p
-
     try:
+        soup = get_page_soup(1, driver)
+        if not soup:
+            print("Failed to load first page. Exiting.")
+            return
+
+        total_pages = get_total_pages(soup)
+        if not total_pages:
+            print("Could not determine total pages automatically. Defaulting to 100.")
+            total_pages = 100
+
+        print("Processing page 1...")
+        products = extract_products(soup)
+        print(f"Found {len(products)} items on page 1.")
+        
+        for p in products:
+            url = p['url']
+            current_run_urls.add(url)
+            all_products_dict[url] = p
+
         for page in range(2, total_pages + 1):
-            soup = get_page_soup(page)
+            soup = get_page_soup(page, driver)
             if not soup:
                 continue
             
@@ -202,6 +251,10 @@ def main():
     except Exception as e:
         print(f"An error occurred: {e}. Saving current progress...")
         save_data(all_products_dict)
+    finally:
+        if driver:
+            driver.quit()
+            print("WebDriver closed.")
 
 if __name__ == "__main__":
     main()
