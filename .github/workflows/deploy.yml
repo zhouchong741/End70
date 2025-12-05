@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.html'
       - 'data.js'
+      - 'endclothing_70off.json'
       - '*.css'
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:

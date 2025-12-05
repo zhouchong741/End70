@@ -1,18 +1,13 @@
-name: 爬虫 & 部署
+name: 爬虫脚本 (手动)
 
 on:
-  schedule:
-    - cron: '0 */6 * * *'  # 每6小时运行一次
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # 仅手动触发
 
-# 设置 GITHUB_TOKEN 权限
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 jobs:
-  scrape-and-deploy:
+  scrape:
     runs-on: ubuntu-latest
     
     steps:
@@ -37,8 +32,6 @@ jobs:
 
       - name: 执行爬虫脚本
         run: python scrape_endclothing.py
-        env:
-          DISPLAY: ':99'
 
       - name: 提交更新的数据文件
         run: |
@@ -47,11 +40,3 @@ jobs:
           git add endclothing_70off.json data.js
           git diff --staged --quiet || git commit -m "Update product data [skip ci]"
           git push
-
-      - name: 部署到 GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
-          publish_branch: gh-pages
-          exclude_assets: '.github,scrape_endclothing.py,requirements.txt,.git'
