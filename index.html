@@ -137,7 +137,7 @@
 
         <!-- 更新时间 -->
         <div class="mb-4 sm:mb-6">
-            <span class="update-time">📅 最后更新: 2025-12-05 11:09</span>
+            <span class="update-time" id="update-time">📅 最后更新: 加载中...</span>
         </div>
 
         <!-- Product Grid: 2列(手机) / 3列(平板) / 4列(桌面) / 5列(大屏) -->
@@ -191,6 +191,11 @@
 
         if (window.products) {
             renderProducts(window.products);
+
+            // 动态显示更新时间
+            if (window.updateTime) {
+                document.getElementById('update-time').textContent = `📅 最后更新: ${window.updateTime}`;
+            }
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();

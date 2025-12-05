@@ -5,6 +5,7 @@ import json
 import time
 import math
 import os
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -37,10 +38,12 @@ def save_data(products_dict):
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(products_list, f, ensure_ascii=False, indent=2)
     
-    # Save as JS for HTML view
+    # Save as JS for HTML view with update time
     json_str = json.dumps(products_list, ensure_ascii=False)
+    update_time = datetime.now().strftime('%Y-%m-%d %H:%M')
     with open(DATA_JS_FILE, 'w', encoding='utf-8') as f:
-        f.write(f"window.products = {json_str};")
+        f.write(f"window.products = {json_str};\n")
+        f.write(f'window.updateTime = "{update_time}";')
 
 def get_page_soup(page_num, driver=None):
     """使用Selenium获取渲染后的页面"""
