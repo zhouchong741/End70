@@ -3,16 +3,22 @@
 # End70 爬虫定时任务
 # 每小时执行一次
 
+# 获取脚本所在目录
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# 自动激活虚拟环境（如果存在）
+if [ -f "venv/bin/activate" ]; then
+    source venv/bin/activate
+    echo "✓ 已激活虚拟环境"
+fi
+
 echo "========================================"
 echo "  End70 爬虫定时任务"
 echo "  每小时执行一次"
 echo "  按 Ctrl+C 停止"
 echo "========================================"
 echo ""
-
-# 获取脚本所在目录
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-cd "$SCRIPT_DIR"
 
 while true; do
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] 开始执行爬虫..."
