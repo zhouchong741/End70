@@ -3,8 +3,6 @@ name: 爬虫 & 部署
 on:
   schedule:
     - cron: '0 */6 * * *'  # 每6小时运行一次
-  push:
-    branches: [ main ]
   workflow_dispatch:  # 允许手动触发
 
 # 设置 GITHUB_TOKEN 权限
@@ -21,6 +19,11 @@ jobs:
       - name: 拉取代码
         uses: actions/checkout@v4
 
+      - name: 设置 Chrome 浏览器
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
       - name: 设置 Python
         uses: actions/setup-python@v5
         with:
@@ -34,6 +37,8 @@ jobs:
 
       - name: 执行爬虫脚本
         run: python scrape_endclothing.py
+        env:
+          DISPLAY: ':99'
 
       - name: 提交更新的数据文件
         run: |
