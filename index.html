@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111;
+            background-color: #f5f5f5;
         }
 
         .product-card {
@@ -18,7 +18,7 @@
 
         .product-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         /* 移动端紧凑样式 */
@@ -90,19 +90,30 @@
 
         /* 搜索框样式 */
         .search-box {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
+            background: white;
+            border: 1px solid #e5e5e5;
+            color: #333;
         }
 
         .search-box::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+            color: #999;
         }
 
         .search-box:focus {
-            background: rgba(255, 255, 255, 0.15);
+            background: white;
             border-color: #ef4444;
             outline: none;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        /* 更新时间样式 */
+        .update-time {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -113,16 +124,21 @@
         <header class="mb-3 sm:mb-6">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-4">
                 <div>
-                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white">End Clothing Sale</h1>
-                    <p class="text-gray-400 text-xs sm:text-sm mt-1">70% Off Collection</p>
+                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">End Clothing Sale</h1>
+                    <p class="text-gray-500 text-xs sm:text-sm mt-1">70% Off Collection</p>
                 </div>
                 <div class="flex items-center gap-2 sm:gap-3">
-                    <span class="text-xs sm:text-sm text-gray-400" id="item-count">Loading...</span>
+                    <span class="text-xs sm:text-sm text-gray-500" id="item-count">Loading...</span>
                     <input type="text" id="search" placeholder="搜索产品..."
                         class="search-box w-32 sm:w-40 lg:w-48 px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-lg">
                 </div>
             </div>
         </header>
+
+        <!-- 更新时间 -->
+        <div class="mb-4 sm:mb-6">
+            <span class="update-time">📅 最后更新: 2025-12-05 11:09</span>
+        </div>
 
         <!-- Product Grid: 2列(手机) / 3列(平板) / 4列(桌面) / 5列(大屏) -->
         <div id="product-grid"
@@ -131,7 +147,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="mt-6 text-center text-gray-500 text-xs">
+        <footer class="mt-6 text-center text-gray-400 text-xs">
             <p>Data auto-updates every 6 hours</p>
         </footer>
     </div>
@@ -150,19 +166,19 @@
 
             items.forEach(product => {
                 const card = document.createElement('div');
-                card.className = 'product-card bg-gray-900 rounded-lg overflow-hidden flex flex-col';
+                card.className = 'product-card bg-white rounded-lg overflow-hidden flex flex-col shadow-md';
 
                 const imgUrl = product.image_url || 'https://via.placeholder.com/300x400?text=No+Image';
 
                 card.innerHTML = `
-                    <a href="${product.url}" target="_blank" class="block relative product-img overflow-hidden bg-gray-800">
+                    <a href="${product.url}" target="_blank" class="block relative product-img overflow-hidden bg-gray-100">
                         <img src="${imgUrl}" alt="${product.name}" class="w-full h-full object-cover object-center" loading="lazy">
                         <div class="discount-badge absolute top-1 right-1 sm:top-2 sm:right-2 bg-red-500 text-white font-bold rounded">
                             ${product.discount || 'SALE'}
                         </div>
                     </a>
                     <div class="product-info flex-1 flex flex-col">
-                        <h3 class="product-name font-medium text-gray-200 line-clamp-2 mb-1 sm:mb-2" title="${product.name}">${product.name}</h3>
+                        <h3 class="product-name font-medium text-gray-700 line-clamp-2 mb-1 sm:mb-2" title="${product.name}">${product.name}</h3>
                         <div class="mt-auto flex items-baseline gap-1 sm:gap-2">
                             <span class="product-price font-bold text-red-500">¥${product.discounted_price}</span>
                             <span class="product-original text-gray-500 line-through">¥${product.original_price}</span>
@@ -184,7 +200,7 @@
                 renderProducts(filtered);
             });
         } else {
-            grid.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">No data found. Please run the scraper first.</p>';
+            grid.innerHTML = '<p class="col-span-full text-center text-gray-400 py-10">No data found. Please run the scraper first.</p>';
         }
     </script>
 </body>
