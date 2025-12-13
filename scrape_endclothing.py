@@ -14,7 +14,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-BASE_URL = "https://www.endclothing.com/cn/sale"
+BASE_URL = "https://www.endclothing.com/cn/sale/all-sale"
 OUTPUT_FILE = "endclothing_70off.json"
 DATA_JS_FILE = "data.js"
 HEADERS = {
@@ -45,20 +45,35 @@ def save_data(products_dict):
         f.write(f"window.products = {json_str};\n")
         f.write(f'window.updateTime = "{update_time}";')
 
+def create_chrome_options():
+    """创建Chrome选项，抑制不必要的警告和日志"""
+    options = Options()
+    options.add_argument('--headless=new')  # 使用新版headless模式
+    options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument('--disable-gpu')
+    options.add_argument('--disable-software-rasterizer')
+    options.add_argument('--disable-webgl')
+    options.add_argument('--disable-webgl2')
+    options.add_argument('--log-level=3')  # 只显示严重错误
+    options.add_argument('--silent')
+    options.add_argument(f'user-agent={HEADERS["User-Agent"]}')
+    
+    # 抑制 DevTools 和其他日志
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.add_experimental_option('useAutomationExtension', False)
+    
+    return options
+
 def get_page_soup(page_num, driver=None):
     """使用Selenium获取渲染后的页面"""
     url = f"{BASE_URL}?page={page_num}"
-    print(f"Fetching {url} with Selenium...")
+    print(f"Fetching page {page_num}...", end=" ", flush=True)
     
     close_driver = False
     if driver is None:
         close_driver = True
-        options = Options()
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        options.add_argument('--disable-gpu')
-        options.add_argument(f'user-agent={HEADERS["User-Agent"]}')
+        options = create_chrome_options()
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     try:
@@ -191,12 +206,7 @@ def main():
     
     # 创建共享的Selenium driver
     print("Initializing Selenium WebDriver...")
-    options = Options()
-    options.add_argument('--headless')
-    options.add_argument('--no-sandbox')
-    options.add_argument('--disable-dev-shm-usage')
-    options.add_argument('--disable-gpu')
-    options.add_argument(f'user-agent={HEADERS["User-Agent"]}')
+    options = create_chrome_options()
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     try:
