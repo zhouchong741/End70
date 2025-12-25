@@ -1416,14 +1416,6 @@
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/5/05-10-24-TC_FE65SN090F95-99_1_1.jpg"
   },
   {
-    "name": "Union LA Cannon CardiganFrench Roast",
-    "original_price": 2425,
-    "discounted_price": 728,
-    "discount": "70% off",
-    "url": "https://www.endclothing.com/cn/union-la-cannon-cardigan-kjl-268-00017-200.html?queryID=fd81aa2e79eed244018f62b19be0a34c",
-    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/3/0/30-09-24-LS_KJL-268-00017-200_1_1.jpg"
-  },
-  {
     "name": "Palm Angels Monogram V-Neck KnitWhite",
     "original_price": 6245,
     "discounted_price": 1874,
@@ -3190,5 +3182,29 @@
     "discount": "70% off",
     "url": "https://www.endclothing.com/cn/wild-things-wild-cat-t-shirt-wt241-26-wht.html?queryID=407f92fbb736fc0c7495828da9629fc3",
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/2/22-04-2024-GH_WT241-26-WHT_1_1.jpg"
+  },
+  {
+    "name": "Wood Wood Nico ShirtTerra Brown",
+    "original_price": 1235,
+    "discounted_price": 371,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/wood-wood-nico-shirt-30250225-2546.html?queryID=9afdbd7dad800dc7931e4589a6b99ba3",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/6/16-10-24-LS_30250225-2546_1_1.jpg"
+  },
+  {
+    "name": "F/CE. Mesh Knitted Short Sleeve ShirtGreen",
+    "original_price": 1475,
+    "discounted_price": 443,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/fce-mesh-knitted-short-sleeve-shirt-fst11241u0001-grn.html?queryID=bb89ecd0b1d02e7d38c2a0211fd7380e",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/8/18-04-2024-GH_FST11241U0001-GRN_1_1.jpg"
+  },
+  {
+    "name": "ERL Make Believe Long Sleeve T-ShirtBlack",
+    "original_price": 1789,
+    "discounted_price": 537,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/erl-make-believe-long-sleeve-t-shirt-erl08t010-blk.html?queryID=bb89ecd0b1d02e7d38c2a0211fd7380e",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/7/17-04-2024-JA_ERL08T010-BLK_1_1.jpg"
   }
 ]
