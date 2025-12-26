@@ -96,14 +96,6 @@
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/B/R/BR_PO-J031-051-1_1_1.jpg"
   },
   {
-    "name": "Wooyoungmi Stripe Short Sleeve ShirtIvory",
-    "original_price": 3539,
-    "discounted_price": 1062,
-    "discount": "70% off",
-    "url": "https://www.endclothing.com/cn/wooyoungmi-stripe-short-sleeve-shirt-w251sh24-824i.html?queryID=aaf832652948fc3a760eb9158afc4b3c",
-    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/1/01-04-25-LS_W251SH24-824I_1_1.jpg"
-  },
-  {
     "name": "Nike Clogposite SneakerIronstone & Safety Orange",
     "original_price": 1035,
     "discounted_price": 311,
@@ -3350,5 +3342,53 @@
     "discount": "70% off",
     "url": "https://www.endclothing.com/cn/wood-wood-dallas-knit-vest-12345500-4759-6016.html?queryID=4bdacbe936f5fceba065a767c6364f72",
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/9/19-02-24-LS_12345500-4759-6016_1_1.jpg"
+  },
+  {
+    "name": "Palm Angels Gothic Logo Varsity JacketBlack",
+    "original_price": 11489,
+    "discounted_price": 3447,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/palm-angels-gothic-logo-varsirty-jacket-pmek007f24fab0011061.html?queryID=01795241cd985d29a3a20d2db6db88eb",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/3/0/30-09-24-LS_PMEK007F24FAB0011061_1_1.jpg"
+  },
+  {
+    "name": "Dime Classic Skynet T-ShirtWhite",
+    "original_price": 390,
+    "discounted_price": 117,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/dime-classic-skynet-t-shirt-dimefa2426wht.html?queryID=51a0a0e69484ff63128dd9cb5b98d8ed",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/6/26-09-24-NS2_DIMEFA2426WHT_1_1.jpg"
+  },
+  {
+    "name": "Diadora B.560 Torino ItaliaGray Morning",
+    "original_price": 1909,
+    "discounted_price": 573,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/diadora-b560-torino-italia-201-180903-75019.html?queryID=51a0a0e69484ff63128dd9cb5b98d8ed",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/6/26-09-2024-JD_201-180903-75019_1_1.jpg"
+  },
+  {
+    "name": "Fear of God Denim ShirtMedium Indigo",
+    "original_price": 7945,
+    "discounted_price": 2384,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/fear-of-god-denim-shirt-fg24fw50-1018dnm-436.html?queryID=51a0a0e69484ff63128dd9cb5b98d8ed",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/4/24-09-2024-JD_FG24FW50-1018DNM-436_1_1.jpg"
+  },
+  {
+    "name": "Fear of God Straight 5-Pocket JeansWashed Dune",
+    "original_price": 6325,
+    "discounted_price": 1898,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/fear-of-god-straight-5-pocket-jeans-fg24fw40-2001dnm-267.html?queryID=51a0a0e69484ff63128dd9cb5b98d8ed",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/4/24-09-24-NS2_FG24FW40-2001DNM-267_1_1.jpg"
+  },
+  {
+    "name": "Alexander McQueen Brushed Mohair Tartan JumperRed, Black & Yellow",
+    "original_price": 10009,
+    "discounted_price": 3003,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/alexander-mcqueen-brushed-mohair-tartan-jumper-807292-q1bbc-6130.html?queryID=51a0a0e69484ff63128dd9cb5b98d8ed",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/4/24-09-2024-blr_807292-q1bbc-6130_1.jpg"
   }
 ]
