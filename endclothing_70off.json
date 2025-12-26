@@ -960,14 +960,6 @@
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/1/21-24-BeamsPlusFlannelWorkShirt-Green-_3811-0889-139-65_1_1.jpg"
   },
   {
-    "name": "Givenchy G Varsity Logo T-ShirtPowder",
-    "original_price": 4135,
-    "discounted_price": 1241,
-    "discount": "70% off",
-    "url": "https://www.endclothing.com/cn/givenchy-g-varsity-logo-t-shirt-bm71mg3ypd-272.html?queryID=d5a9e6a2d14dbbde469d3700f7a8a1e1",
-    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/0/20-11-2024-JW_BM71MG3YPD-272_1_1.jpg"
-  },
-  {
     "name": "Nike Air Pegasus 2005 Wave SneakerGrey, Silver & Pink",
     "original_price": 1155,
     "discounted_price": 347,
@@ -3414,5 +3406,85 @@
     "discount": "70% off",
     "url": "https://www.endclothing.com/cn/dolce-gabbana-vibe-logo-jacket-g9zv4tgh398-n0000.html?queryID=42a0852feff5fd03f083e8c1d7d70b19",
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/6/16-01-2024-AJ_G9ZV4TGH398-N0000_1_1.jpg"
+  },
+  {
+    "name": "A Kind of Guise Derbin ShirtVelvet Paisley",
+    "original_price": 2215,
+    "discounted_price": 665,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/a-kind-of-guise-derbin-shirt-128-12607-152.html?queryID=aa6aa8f6be10aaae6d38465e3988778d",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/1/11-10-2024-BLR_128-12607-152_1_1.jpg"
+  },
+  {
+    "name": "Billionaire Boys Club Astro Crew KnitRed",
+    "original_price": 1765,
+    "discounted_price": 530,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/billionaire-boys-club-astro-crew-knit-b23422-red.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/9/09-01-24-NS_B23422-RED_1_1.jpg"
+  },
+  {
+    "name": "Adidas Crazy IIInfinityCore Black & Grey Six",
+    "original_price": 1109,
+    "discounted_price": 333,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/adidas-crazy-iiinfinity-id8729.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/3/03_01_2024_jd_id8729_2.jpg"
+  },
+  {
+    "name": "Marcelo Burlon Snake Wings Regular HoodyBlack",
+    "original_price": 3650,
+    "discounted_price": 1095,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/marcelo-burlon-snake-wings-regular-hoody-cmbb007c99fle0031001.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/0/10-01-2023-AJ_CMBB007C99FLE0031001_1_1.jpg"
+  },
+  {
+    "name": "Adidas x Hoer Track TopBlack",
+    "original_price": 1115,
+    "discounted_price": 335,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/adidas-x-hoer-track-top-in3110.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/2/02-02-2024-AJ_IN3110_1_1.jpg"
+  },
+  {
+    "name": "Adidas Adistar CushionWhite, Pulse Lime & Core Black",
+    "original_price": 969,
+    "discounted_price": 291,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/adidas-adistar-cushion-id5744.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/4/04-01-2024-BLR_ID5744_2_1.jpg"
+  },
+  {
+    "name": "Adidas Country OGCore Black & White",
+    "original_price": 765,
+    "discounted_price": 230,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/adidas-country-og-ie4231.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/3/03-01-2024-JC_IE4231_2_1.jpg"
+  },
+  {
+    "name": "Adidas Country OGWhite & Green",
+    "original_price": 765,
+    "discounted_price": 230,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/adidas-country-og-if2856.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/2/02-01-2024-JW_IF2856_2_1.jpg"
+  },
+  {
+    "name": "YMC Slip-On SneakerYellow",
+    "original_price": 759,
+    "discounted_price": 228,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/ymc-slip-on-sneaker-pfuzc-ylw.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/5/05-07-23-jf_pfuzc-ylw_1.jpg"
+  },
+  {
+    "name": "YMC Slip-On SneakerBlack",
+    "original_price": 759,
+    "discounted_price": 228,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/ymc-slip-on-sneaker-pfuzc-blk.html?queryID=058bb69918907a668254cf7409bae361",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/5/05-07-2023-aj_pfuzc-blk_m1.jpg"
   }
 ]
