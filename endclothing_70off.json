@@ -1192,14 +1192,6 @@
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/7/17-10-2024-BLR_LC-D07JOG02_1_1.jpg"
   },
   {
-    "name": "Country of Origin Thames Stripe Knit JumperNavy Tartan",
-    "original_price": 1555,
-    "discounted_price": 467,
-    "discount": "70% off",
-    "url": "https://www.endclothing.com/cn/country-of-origin-thames-stripe-knit-jumper-ss2714-nta.html?queryID=4398de819e5202c03c7846025f661819",
-    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/1/7/17-10-2024-BLR_SS2714-NTA_1_1.jpg"
-  },
-  {
     "name": "Wood Wood Nico ShirtTerra Brown",
     "original_price": 1235,
     "discounted_price": 371,
@@ -3670,5 +3662,13 @@
     "discount": "70% off",
     "url": "https://www.endclothing.com/cn/new-balance-mt580rca-mt580rca.html?queryID=a07213a1260ef8cf2e65a2741e9ec619",
     "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/2/7/27-02-2023-BLR_MT580RCA_2_1.jpg"
+  },
+  {
+    "name": "Wooyoungmi Stripe Short Sleeve ShirtIvory",
+    "original_price": 3539,
+    "discounted_price": 1062,
+    "discount": "70% off",
+    "url": "https://www.endclothing.com/cn/wooyoungmi-stripe-short-sleeve-shirt-w251sh24-824i.html?queryID=37d87682c45cc7552b4d85f92f6675d4",
+    "image_url": "https://media.endclothing.com/media/f_auto,q_auto:eco,w_1600/prodmedia/media/catalog/product/0/1/01-04-25-LS_W251SH24-824I_1_1.jpg"
   }
 ]
